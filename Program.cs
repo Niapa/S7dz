@@ -143,11 +143,15 @@ void Print2DArray(int[,] array)
 }
 
 void ArithmetiMeanColumn(int[,] array)
+{
 for (int i = 0; i < array.GetLength(0); i++)
         for (int j = 0; j < array.GetLength(1); j++)
-            arr[i]+=arr[i];
-            int res = arr[i]/i;
-            Console.WriteLine(res);
+        {
+            array[i,j] += array[i,j];
+            int res = (array[i,j])/(i + 1);
+            Console.Write(res + " ");
+            }
+}
 
 int rows = InputNum("Введите количество строк массива: ");
 int columns = InputNum("Введите количество столбцов массива: ");
