@@ -58,26 +58,7 @@ __________________________________________________________________________
 8 4 2 4
 17 -> такого числа в массиве нет
 
-Задача 52. Задайте двумерный массив из целых чисел. 
-Найдите среднее арифметическое элементов в каждом столбце.
-_______________________________________________________________
 
-Например, задан массив:
-1 4 7 2
-5 9 2 3
-8 4 2 4
-Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
-
-Задача 50. Напишите программу, которая на вход принимает позиции элемента
-в двумерном массиве, и возвращает значение этого элемента или же указание,
- что такого элемента нет.
-
-Например, задан массив:
-1 4 7 2
-5 9 2 3
-8 4 2 4
-17 -> такого числа в массиве нет
-*/
 
 int InputNum(string message)
 {
@@ -120,7 +101,59 @@ if (i <= rows-1 && j <= columns-1)
 Console.WriteLine(myArray[i-1,j-1]);
 else Console.WriteLine($"Такого индекса нет в таблице");
 
+Задача 52. Задайте двумерный массив из целых чисел. 
+Найдите среднее арифметическое элементов в каждом столбце.
+_______________________________________________________________
+
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+ */
 
 
+int InputNum(string message)
+{
+    Console.Write(message);
+    return int.Parse(Console.ReadLine()!);
+}
 
+int[,] Create2DArray(int rows, int cols)
+{
+    return new int[rows, cols];
+}
 
+void Fill2DArray(int[,] array, int min, int max)
+{
+    Random rnd = new Random();
+    for (int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j < array.GetLength(1); j++)
+            array[i, j] = rnd.Next(min, max+1);
+}
+
+void Print2DArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+            Console.Write($"{array[i, j]}\t");
+        Console.WriteLine();
+    }
+}
+
+void ArithmetiMeanColumn(int[,] array)
+for (int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j < array.GetLength(1); j++)
+            arr[i]+=arr[i];
+            int res = arr[i]/i;
+            Console.WriteLine(res);
+
+int rows = InputNum("Введите количество строк массива: ");
+int columns = InputNum("Введите количество столбцов массива: ");
+int minValue = InputNum("Введите минимальное значение диапазона: ");
+int maxValue = InputNum("Введите максимальное значение диапазона: ");
+int[,] myArray = Create2DArray(rows, columns);
+Fill2DArray(myArray, minValue, maxValue);
+Print2DArray(myArray);
+ArithmetiMeanColumn(myArray);
