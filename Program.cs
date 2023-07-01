@@ -142,15 +142,20 @@ void Print2DArray(int[,] array)
     }
 }
 
-void ArithmetiMeanColumn(int[,] array)
+void ArithmeticMeanColumn(int[,] array)
 {
+int res = 0;
+int sum = 0;
 for (int i = 0; i < array.GetLength(0); i++)
-        for (int j = 0; j < array.GetLength(1); j++)
+    {
+    for (int j = 0; j < array.GetLength(1))
         {
-            array[i,j] += array[i,j];
-            int res = (array[i,j])/(i + 1);
-            Console.Write(res + " ");
-            }
+            sum += array[i,j];
+            j++;
+        }
+        res = sum/(i + 1);
+    Console.Write(res + " ");          
+    }
 }
 
 int rows = InputNum("Введите количество строк массива: ");
@@ -160,4 +165,4 @@ int maxValue = InputNum("Введите максимальное значени�
 int[,] myArray = Create2DArray(rows, columns);
 Fill2DArray(myArray, minValue, maxValue);
 Print2DArray(myArray);
-ArithmetiMeanColumn(myArray);
+ArithmeticMeanColumn(myArray);
