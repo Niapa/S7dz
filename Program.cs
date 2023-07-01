@@ -148,14 +148,17 @@ double res = 0;
 int sum = 0;
 int i = 0;
 int j = 0;
-while (i < array.GetLength(0))
+for (i < array.GetLength(0))
     {
-    while (j < array.GetLength(1)) sum += array[i,j];
+    for (j < array.GetLength(1)) 
+    {
+    sum += array[i,j];
+    }
     res = sum/(i + 1);
     i++;
     Console.Write(res + " ");  
-    }
-        j++;        
+    j++; 
+    }          
     
 }
 
