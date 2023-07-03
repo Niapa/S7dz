@@ -112,7 +112,6 @@ _______________________________________________________________
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
  */
 
-
 int InputNum(string message)
 {
     Console.Write(message);
@@ -144,22 +143,23 @@ void Print2DArray(int[,] array)
 
 void ArithmeticMeanColumn(int[,] array)
 {
-double res = 0;
 int sum = 0;
-int i = 0;
-int j = 0;
-for (i < array.GetLength(0))
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    for (int j == 0; j < array.GetLength(1); j++)
     {
-    for (j < array.GetLength(1)) 
+        sum += array[i,j];
+        int res = sum/(i+1);
+        Console.Write(res + " ");
+    }
+    else if (int j != 0)
     {
     sum += array[i,j];
+        int res = sum/(i+1);
+        Console.Write(res + " ");
     }
-    res = sum/(i + 1);
-    i++;
-    Console.Write(res + " ");  
-    j++; 
-    }          
-    
+    Console.WriteLine();
+}
 }
 
 int rows = InputNum("Введите количество строк массива: ");
