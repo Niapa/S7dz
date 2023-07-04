@@ -146,16 +146,16 @@ void ArithmeticMeanColumn(int[,] array)
 int sum = 0;
 for (int i = 0; i < array.GetLength(0); i++)
 {
-    for (int j == 0; j < array.GetLength(1); j++)
+    for (int j = 0; j < array.GetLength(1); j++)
     {
         sum += array[i,j];
-        int res = sum/(i+1);
+        double res = sum/(i+1);
         Console.Write(res + " ");
     }
-    else if (int j != 0)
+    else if (int j > 0; j < array.GetLength(1); j++)
     {
-    sum += array[i,j];
-        int res = sum/(i+1);
+        sum += array[i,j];
+        double res = sum/i;
         Console.Write(res + " ");
     }
     Console.WriteLine();
